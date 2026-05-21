@@ -2,6 +2,8 @@
 
 This page is the public-facing demo for the portfolio. It keeps the evidence in one place, explains what each screenshot shows, and avoids any build steps, code, or operational instructions.
 
+**Architecture diagrams:** high-level visuals live in the repository `architecture/` folder — [C2 overview](../architecture/C2.md) and [RAT lifecycle](../architecture/RAT.md).
+
 The screenshots below are from a controlled lab setup used for academic research. They are included to document what the project does at a high level and to support discussion in interviews, reviews, or academic presentations.
 
 ## What the demo shows

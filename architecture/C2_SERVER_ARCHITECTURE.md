@@ -53,3 +53,48 @@ The value of this section is in showing how a security research prototype can be
 ## Safe Public Summary
 
 This document shows the control-plane architecture of the research prototype at a level suitable for a public portfolio. It intentionally avoids code, exact protocol details, and operational instructions.
+
+## Diagram
+
+Stylized Mermaid diagram (inline) showing the C2 GUI, backend listener, and device handlers.
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#0ea5a4','secondaryColor':'#7c3aed','edgeLabelBackground':'#ffffff'}}}%%
+flowchart TD
+	classDef gui fill:#0f172a,stroke:#0ea5a4,color:#ffffff,stroke-width:1px;
+	classDef backend fill:#061826,stroke:#1e3a8a,color:#ffffff,stroke-width:1px;
+	classDef proc fill:#7c3aed,stroke:#5b21b6,color:#ffffff,stroke-width:1px;
+	classDef io fill:#f59e0b,stroke:#b45309,color:#000000,stroke-width:1px;
+
+	A([🖥️ Start C2 GUI]):::gui --> B([Main Window<br/>PyQt5]):::gui
+	B --> C{User selects tab}:::proc
+
+	C -->|Tab 1| D([📊 Dashboard]):::gui
+	C -->|Tab 2| E([📦 APK Builder]):::proc
+	C -->|Tab 3| F([📡 Server Listener]):::backend
+	C -->|Tab 4| G([📁 Module Grabber]):::proc
+
+	subgraph Backend
+		H([🔌 Listener Thread<br/>TCP :5555]):::backend
+		I([📱 Device Handler<br/>1 per connection]):::backend
+	end
+
+	F --> H
+	H -->|accept connection| I
+	I -->|signal: device online| D
+
+	D -->|user types command| J([➡️ Send command via socket]):::proc
+	J --> I
+	I -->|device response| K([📝 Console + Table update]):::io
+
+	G -->|button click (e.g., Contacts)| I
+	I -->|file/completion marker| L([💾 Save to ./output/]):::io
+
+	style A stroke-width:2px,stroke:#0ea5a4
+	style B stroke-width:2px,stroke:#0ea5a4
+	linkStyle default stroke:#94a3b8,stroke-width:1.5px
+```
+
+Notes:
+
+- Colors and emoji are used to increase visual scanability. If your Markdown viewer doesn't render Mermaid, view the file in a renderer that supports Mermaid.

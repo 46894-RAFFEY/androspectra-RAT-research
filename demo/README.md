@@ -17,46 +17,37 @@ The screenshots below are from a controlled lab setup used for academic research
 
 ## Screenshot Gallery
 
-### 1. Project overview
+### 1. Unified Threat Architecture Dashboard
 ![Project overview](./01-overview-modules.png)
+*Displays the primary operator interface, showing aggregated metrics, active payload modules, and concurrent device session states.*
 
-Shows the full project dashboard and the breadth of the research prototype in one view.
-
-### 2. Builder interface
+### 2. Payload Configuration Engine
 ![Builder interface](./02-builder-tool.png)
+*The lab environment configuration panel used to dynamically generate the conceptual payloads, defining C2 callback URIs and initial permission manifests.*
 
-Shows the project’s configuration and build panel used during the lab demonstration.
-
-### 3. Connected device
+### 3. Active Target Session
 ![Connected device](./03-connected-device.png)
+*Demonstrates a successful heartbeat beacon from the Android 15 AVD target, establishing the secure asynchronous session.*
 
-Shows a lab device connected and responding in the demo environment.
-
-### 4. Server listener
+### 4. Reverse Proxy & Network Listener
 ![Server listener](./04-server-listener.png)
+*The backend terminal view capturing incoming mTLS handshakes and payload extraction logs from the target.*
 
-Shows the server-side connection monitor and activity log for the session.
-
-### 5. File browser view
+### 5. Remote File System Enumeration
 ![File browser view](./05-file-browser.png)
+*Demonstrates the `MediaStore` and scoped-storage enumeration logic, allowing the operator to parse and stage local files for exfiltration.*
 
-Shows the file access and export view used to demonstrate data handling in the research setup.
-
-### 6. Audio capture view
+### 6. Environmental Audio Capture
 ![Audio capture view](./06-audio-capture.png)
+*Visualizes the successful exfiltration and server-side rendering of audio captured via the theoretical abuse of the `MediaRecorder` API.*
 
-Shows the captured audio output from the controlled demonstration.
-
-### 7. Module dashboard
+### 7. Capability Routing Dashboard
 ![Module dashboard](./07-module-dashboard.png)
+*The granular control matrix used to toggle specific persistence mechanisms and data-collection sub-routines on the infected endpoint.*
 
-Shows the module list and status summary for the project.
-
-### 8. Session console
+### 8. Interactive Shell Interface
 ![Session console](./08-session-shell.png)
+*A conceptual reverse-shell interface simulating remote command execution within the application's local sandbox.*
 
-Shows the active session console used in the lab demonstration.
-
-## Ethical boundary
-
-This portfolio is presented as research documentation only. It does not include source code, APKs, build scripts, or step-by-step instructions for recreating the project.
+---
+*Note: All data visible in these screenshots is synthetically generated lab data.*

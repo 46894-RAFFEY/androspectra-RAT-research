@@ -1,5 +1,4 @@
 
-```markdown
 # Isolated Laboratory Environment Setup
 
 To ensure compliance with academic ethical guidelines, local cybersecurity laws (PECA 2016), and to prevent accidental network egress, the AndroSpectra architecture was developed, compiled, and tested entirely within a strictly air-gapped virtual environment.
@@ -13,9 +12,9 @@ To ensure compliance with academic ethical guidelines, local cybersecurity laws 
 ## 2. Network Topology (Host-Only)
 
 ```mermaid
-graph LR
-    subgraph Isolated Lab Subnet 192.168.50.0/24
-        A[Android 15 Target IP: .10] <-->|Internal Routing Only| B[Debian C2 Server IP: .20]
+flowchart LR
+    subgraph lab [Isolated Lab Subnet 192.168.50.0/24]
+        A[Android 15 Target IP: .10] <--> B[Debian C2 Server IP: .20]
         C[Wireshark / Zeek Monitor] -.->|Port Mirroring| A
         C -.->|Port Mirroring| B
     end

@@ -176,5 +176,3 @@ See [ETHICAL_NOTICE.md](ETHICAL_NOTICE.md) for the full statement on responsible
 ---
 
 *This repository demonstrates research capability, not operational capability. It is intended for review by employers, academic peers, and the security research community.*
-
-

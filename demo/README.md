@@ -60,7 +60,3 @@ Shows the active session console used in the lab demonstration.
 ## Ethical boundary
 
 This portfolio is presented as research documentation only. It does not include source code, APKs, build scripts, or step-by-step instructions for recreating the project.
-
-## What to say about it
-
-If someone reviews this portfolio, the safe summary is simple: it is an academic security research project that demonstrates how a mobile threat can be observed, documented, and explained without publishing the implementation.
